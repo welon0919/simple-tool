@@ -1,6 +1,6 @@
 let mainContainer = document.getElementById("main-container");
+let valid_nums = [1, 3, 2, 4, 6];
 // nums that should be used
-let valid_nums = [18, 4, 39, 2, 14, 30, 3, 35, 10, 8];
 
 // grids that can be used
 let valid_grids = []
@@ -8,8 +8,7 @@ let valid_grids = []
 // valid grid status
 // key: grid_item_text, value: false(white), true(green)
 let grid_status = {}
-startUp()
-
+startUp();
 function startUp() {
     mainContainer.innerHTML = "";
     for (let i = 1; i <= 42; i++) {
@@ -68,6 +67,28 @@ function log_status() {
         }
     }
 }
+/*
+! async function read_valid_nums() {
+!     let valids = [];
+!     const path = "/mnt/data/invalid.json";
+!     try {
+!         const response = await fetch(path);
+!         if (!response.ok) {
+!             throw new Error("cannot read file");
+!         }
+!         const data = await response.json();
+!         for (let i = 1; i <= 42; i++) {
+!             if (!data.includes(i)) {
+!                 valids.push(i);
+!             }
+!         }
+!     } catch (error) {
+!         console.error(error);
+!     }
+!
+!     valid_nums = valids;
+! }
+    */
 // * something
 // ! error
 // TODO todo
